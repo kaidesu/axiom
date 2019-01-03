@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
-    <title>Axiom</title>
-</head>
-
-<body>
-
+@section('content')
     <h1>{{ $project->title }}</h1>
-
     <p>{{ $project->description }}</p>
-
-</body>
-</html>
+    <p><a href="/projects">Go Back</a></p>
+@endsection
