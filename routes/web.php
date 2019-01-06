@@ -1,5 +1,15 @@
 <?php
 
+$users = App\User::count();
+
+$authSettings = [
+    'register' => true,
+];
+
+if ($users > 0) {
+    $authSettings['register'] = false;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,5 +38,4 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/reminders/{reminder}', 'ReminderController@destroy')->name('reminders.destroy');
 });
 
-Auth::routes();
-
+Auth::routes($authSettings);
