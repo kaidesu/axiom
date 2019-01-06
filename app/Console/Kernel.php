@@ -2,6 +2,9 @@
 
 namespace App\Console;
 
+use App\Reminder;
+use App\Jobs\SendReminder;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,8 +27,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        if (Schema::hasTable('reminders')) {
+            $reminders = Reminder::all();
+
+            foreach ($reminders as $reminder) {
+                $schedule->job(new SendReminder($reminder))->cron($reminder->expression);
+            }
+        }
     }
 
     /**

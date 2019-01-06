@@ -2,15 +2,30 @@
 
 namespace App\Support;
 
+use DatePeriod;
+use DateTime;
+use DateInterval;
+
 class Date
 {
+    public static function range($start, $end, $interval = 'PT30M')
+    {
+        return new DatePeriod(
+            new DateTime($start), new DateInterval($interval), new DateTime($end)
+        );
+    }
+
     public static function frequencies()
     {
         return [
-            'daily' => 'Every day',
-            'weekly' => 'Every week',
-            'monthly' => 'Every month',
-            'yearly' => 'Every year',
+            'everyMinute'        => 'Every minute',
+            'everyTenMinutes'    => 'Every ten minutes',
+            'everyThirtyMinutes' => 'Every thirty minutes',
+            'hourly'             => 'Every hour',
+            'daily'              => 'Every day',
+            'weekly'             => 'Every week',
+            'monthly'            => 'Every month',
+            'yearly'             => 'Every year',
         ];
     }
 

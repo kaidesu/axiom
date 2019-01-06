@@ -1,35 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Reminders</h1>
+    <h1 class="mb-4">Reminders</h1>
 
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Reminder</th>
-                <th>Frequency</th>
-                <th>Day</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Run Once?</th>
-                <th>&nbsp;</th>
-            </tr>
-        </thead>
+    @include('reminders._form')
 
-        <tbody>
-            @foreach ($reminders as $reminder)
+    @if ($reminders->count())
+        <table class="table table-responsive mt-4">
+            <thead>
                 <tr>
-                    <td>{{ $reminder->body }}</td>
-                    <td>{{ $reminder->frequency }}</td>
-                    <td>{{ $reminder->day ?: '-'}}</td>
-                    <td>{{ $reminder->date ?: '-' }}</td>
-                    <td>{{ $reminder->time }}</td>
-                    <td>{{ $reminder->run_once ? 'Yes' : 'No' }}</td>
-                    <td>
-                        <a href="#" class="text-danger">Delete</a>
-                    </td>
+                    <th>Reminder</th>
+                    <th>Frequency</th>
+                    <th>Day</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Run Once?</th>
+                    <th>&nbsp;</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+
+            <tbody>
+                @foreach ($reminders as $reminder)
+                    <tr>
+                        <td>{{ $reminder->body }}</td>
+                        <td>{{ $reminder->frequency }}</td>
+                        <td>{{ $reminder->day ?: '-'}}</td>
+                        <td>{{ $reminder->date ?: '-' }}</td>
+                        <td>{{ $reminder->time }}</td>
+                        <td>{{ $reminder->run_once ? 'Yes' : 'No' }}</td>
+                        <td>
+                            <form action='/reminders/{{ $reminder->id }}' method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn-link text-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @else
+        <hr>
+
+        <p>You have no reminders.</p>
+    @endif
 @endsection

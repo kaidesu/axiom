@@ -19,7 +19,7 @@ class CreateRemindersTable extends Migration
             $table->string('frequency');
             $table->unsignedInteger('day')->nullable();
             $table->unsignedInteger('date')->nullable();
-            $table->string('time');
+            $table->string('time')->nullable();
             $table->string('expression');
             $table->boolean('run_once')->default(false);
             $table->timestamps();

@@ -17,6 +17,11 @@ class Reminder extends Model
         'run_once',
     ];
 
+    public function shouldOnlyRunOnce()
+    {
+        return $this->run_once;
+    }
+
     public function getFrequencyAttribute($value)
     {
         return array_get(Date::frequencies(), $value);
