@@ -39,9 +39,7 @@ class FrequencyBuilder
 
     public function time($hour, $minute)
     {
-        if (! empty($hour) and ! empty($minute)) {
-            $this->at($hour, $minute);
-        }
+        $this->at($hour, $minute);
 
         return $this;
     }
