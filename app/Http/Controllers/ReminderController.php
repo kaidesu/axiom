@@ -16,6 +16,11 @@ class ReminderController extends Controller
         return view('reminders.index', compact('reminders'));
     }
 
+    public function create()
+    {
+        return view('reminders.create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([

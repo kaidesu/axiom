@@ -21,53 +21,49 @@
 </head>
 <body class="bg-grey-light">
     <div id="app">
-        <nav class="bg-white">
+        <nav class="bg-white px-6 shadow">
             <div class="container mx-auto">
-                <div class="flex justify-between items-center py-2">
-                    <h1>
+                <div class="lg:flex lg:justify-between lg:items-center py-2">
+                    <h1 class="w-full flex justify-center">
                         <a href="{{ url('/home') }}">
                             <img src="/images/logo.svg" style="height: 50px;"></img>
                         </a>
                     </h1>
 
-                    <div>
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                    <div class="flex justify-center items-center py-2 lg:p-0">
+                        <ul class="list-reset flex">
                             @auth
-                                <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/reminders">Reminders</a></li>
+                                <li class="mr-4"><a class="text-sm text-grey no-underline" href="/projects">Projects</a></li>
+                                <li><a class="text-sm text-grey no-underline" href="/reminders">Reminders</a></li>
                             @endauth
                         </ul>
+                    </div>
 
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                    <div class="flex justify-center items-center py-2 lg:p-0">
+                        <ul class="list-reset flex">
                             <!-- Authentication Links -->
                             @guest
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <li>
+                                    <a class="mr-4 text-sm text-grey no-underline" href="{{ route('login') }}">Login</a>
                                 </li>
                                 @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <li>
+                                        <a class="text-sm text-grey no-underline" href="{{ route('register') }}">Register</a>
                                     </li>
                                 @endif
                             @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                <li>                              
+                                    <a
+                                        class="text-red-light text-sm no-underline"
+                                        href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                        Logout
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </li>
                             @endguest
                         </ul>

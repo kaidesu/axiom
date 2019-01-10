@@ -43,6 +43,22 @@
      @apply .bg-purple .rounded .shadow-md .px-5 .py-2 .text-white .text-sm .no-underline;
  }
 
+ .row {
+     @apply p-6;
+
+     @screen lg {
+         @apply .flex .flex-wrap .-mx-3;
+     }
+ }
+
+ .col {
+    @apply pb-6;
+
+    @screen lg {
+        @apply .px-3;
+    }
+ }
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

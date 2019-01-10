@@ -2,17 +2,17 @@
     @csrf
     
     <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="body">Remind me...</label>
-                <input type="text" name="body" id="body" class="form-control">
+        <div class="col lg:w-1/4">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="body">Remind me...</label>
+                <input type="text" name="body" id="body" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
             </div>
         </div>
 
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="frequency">Frequency</label>
-                <select name="frequency" id="frequency" class="form-control">
+        <div class="col lg:w-1/4">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="frequency">Frequency</label>
+                <select name="frequency" id="frequency" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     @foreach(\App\Support\Date::frequencies() as $value => $frequency)
                         <option value="{{ $value }}">{{ $frequency }}</option>
                     @endforeach
@@ -20,10 +20,10 @@
             </div>
         </div>
 
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="day">Day</label>
-                <select name="day" id="day" class="form-control">
+        <div class="col lg:w-1/4">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="day">Day</label>
+                <select name="day" id="day" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Choose...</option>
                     @foreach(\App\Support\Date::days() as $value => $day)
                         <option value="{{ $value }}">{{ $day }}</option>
@@ -32,10 +32,10 @@
             </div>
         </div>
 
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="date">Date</label>
-                <select name="date" id="date" class="form-control">
+        <div class="col lg:w-1/4">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="date">Date</label>
+                <select name="date" id="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Choose...</option>
                     @for($i = 1; $i < 32; $i++)
                         <option value="{{ $i }}">{{ \App\Support\Date::ordinal($i) }}</option>
@@ -44,14 +44,14 @@
             </div>
         </div>
 
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="time">Time</label>
+        <div class="col lg:w-1/4">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="time">Time</label>
                 @php
                     $times = \App\Support\Date::range('00:00', '24:00');
                 @endphp
 
-                <select name="time" id="time" class="form-control">
+                <select name="time" id="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Choose...</option>
 
                     @foreach($times as $time)
@@ -64,8 +64,8 @@
 
     <div class="row">
         <div class="col">
-            <div class="form-group">
-                <label for="run_once">
+            <div class="mb-4">
+                <label class="block text-grey-darker text-sm font-bold mb-2" for="run_once">
                     <input type="checkbox" name="run_once" id="run_once" class="mr-1"> Run only once
                 </label>
             </div>
@@ -74,7 +74,7 @@
 
     <div class="row">
         <div class="col">
-            <button type="submit" class="btn btn-primary">Add Reminder</button>
+            <button type="submit" class="button">Add Reminder</button>
         </div>
     </div>
 </form>

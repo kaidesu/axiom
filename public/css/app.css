@@ -579,6 +579,30 @@ table {
   text-decoration: none;
 }
 
+.row {
+  padding: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+}
+
+.col {
+  padding-bottom: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .col {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

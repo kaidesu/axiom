@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/projects', 'ProjectController@store');
 
     Route::get('/reminders', 'ReminderController@index')->name('reminders.index');
+    Route::get('/reminders/create', 'ReminderController@create')->name('reminders.create');
     Route::post('/reminders', 'ReminderController@store')->name('reminders.store');
     Route::delete('/reminders/{reminder}', 'ReminderController@destroy')->name('reminders.destroy');
 });

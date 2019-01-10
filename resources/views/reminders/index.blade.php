@@ -1,11 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="mb-4">Reminders</h1>
+    <header class="flex justify-between items-center mb-3 px-6 py-4">
+        <h2 class="text-grey text-base font-normal">My Reminders</h2>
 
-    @include('reminders._form')
+        <a href="/reminders/create" class="button">New Reminder</a>
+    </header>
 
-    @if ($reminders->count())
+    <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">
+        @forelse($reminders as $reminder)
+            <div class="lg:w-1/3 lg:px-3 pb-6">
+                <div class="bg-white p-5 rounded-lg shadow" style="height: 200px;">
+                    <h3 class="font-normal text-xl py-4 -ml-5 mb-3 border-l-6 border-purple-light pl-4">
+                        {{ $reminder->body }}
+                    </h3>
+
+                    <div class="text-grey">
+
+                    </div>
+                </div>
+            </div>
+        @empty
+            <div>You have no reminders.</div>
+        @endforelse
+    </main>
+
+    {{-- @if ($reminders->count())
         <div class="table-responsive mt-4">
             <table class="table">
                 <thead>
@@ -46,5 +66,5 @@
         <hr>
 
         <p>You have no reminders.</p>
-    @endif
+    @endif --}}
 @endsection
