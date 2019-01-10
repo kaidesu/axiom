@@ -39,6 +39,10 @@
  * @import "components/forms";
  */
 
+ .button {
+     @apply .bg-purple .rounded .shadow-md .px-5 .py-2 .text-white .text-sm .no-underline;
+ }
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
