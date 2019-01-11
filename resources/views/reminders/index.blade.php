@@ -1,28 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <header class="flex justify-between items-center mb-3 px-6 py-4">
+    <header class="flex justify-between items-end mb-3 px-6 py-4">
         <h2 class="text-grey text-base font-normal">My Reminders</h2>
 
         <a href="/reminders/create" class="button">New Reminder</a>
     </header>
 
     <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">
-        @forelse($reminders as $reminder)
-            <div class="lg:w-1/3 lg:px-3 pb-6">
-                <div class="bg-white p-5 rounded-lg shadow" style="height: 200px;">
-                    <h3 class="font-normal text-xl py-4 -ml-5 mb-3 border-l-6 border-purple-light pl-4">
-                        {{ $reminder->body }}
-                    </h3>
-
-                    <div class="text-grey">
-
-                    </div>
+        <div class="w-full px-3">
+            @if($reminders->count())
+                <div class="hidden lg:flex lg:mb-3 card bg-grey-darkest text-white">
+                    <p class="w-1/4 flex"></p>
+                    <p class="w-1/6 flex lg:justify-start">Frequency</p>
+                    <p class="w-1/6 flex lg:justify-center">Day</p>
+                    <p class="w-1/6 flex lg:justify-center">Date</p>
+                    <p class="w-1/6 flex lg:justify-center">Time</p>
+                    <p class="w-1/6 flex lg:justify-start">Run once?</p>
                 </div>
-            </div>
-        @empty
-            <div>You have no reminders.</div>
-        @endforelse
+
+                @foreach($reminders as $reminder)
+                    <div class="card mb-3 lg:flex lg:items-center">
+                        <p class="w-full lg:w-1/4 flex">{{ $reminder->body }}</p>
+                        <p class="w-full lg:w-1/6 flex lg:justify-start">{{ $reminder->frequency }}</p>
+                        <p class="w-full lg:w-1/6 flex lg:justify-center">{{ $reminder->day ?: '-'}}</p>
+                        <p class="w-full lg:w-1/6 flex lg:justify-center">{{ $reminder->date ?: '-'}}</p>
+                        <p class="w-full lg:w-1/6 flex lg:justify-center">{{ $reminder->time ? now()->setTimeFromTimeString($reminder->time)->format('h:i a') : '-' }}</p>
+                        <div class="w-full lg:w-1/6 flex items-center justify-between">
+                            <span>{{ $reminder->run_once ? 'Yes' : '' }}</span>
+
+                            <form action='/reminders/{{ $reminder->id }}' method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="text-red-light no-underline text-xs">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                <div class="card text-center">You have no reminders.</div>
+            @endif
+        </div>
     </main>
 
     {{-- @if ($reminders->count())

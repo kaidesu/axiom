@@ -43,6 +43,10 @@
      @apply .bg-purple .rounded .shadow-md .px-5 .py-2 .text-white .text-sm .no-underline;
  }
 
+ .card {
+     @apply .bg-white .p-5 .rounded-lg .shadow;
+ }
+
  .row {
      @apply p-6;
 
