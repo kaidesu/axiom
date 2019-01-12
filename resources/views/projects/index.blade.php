@@ -4,7 +4,7 @@
     <header class="flex justify-between items-end mb-3 px-6 py-4">
         <p class="text-grey text-base font-normal">My Projects</p>
 
-        <a href="/projects/create" class="button button--primary">New Project</a>
+        <a href="#" v-modal:create-project class="button button--primary">New Project</a>
     </header>
 
     <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">
@@ -16,4 +16,6 @@
             <div>No projects yet.</div>
         @endforelse
     </main>
+
+    <create-project-modal></create-project-modal>
 @endsection

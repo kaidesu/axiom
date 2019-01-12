@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,10 +11,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:api')->group(function() {
+    Route::group(['prefix' => 'project'], function() {
+        Route::post('/', 'API\ProjectController@store');
+    });
 
-Route::middleware('api')->group(function() {
-    Route::post('/reminder', 'API\ReminderController@store');
+    Route::group(['prefix' => 'reminder'], function() {
+        Route::post('/', 'API\ReminderController@store');
+    });
 });

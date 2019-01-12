@@ -6,7 +6,7 @@
             <a href="/projects" class="text-grey text-base font-normal no-underline">My Projects</a> / {{ $project->title }}
         </p>
 
-        <a href="#" class="button">Invite to Project</a>
+        <a href="#" class="button button--primary">Invite to Project</a>
     </header>
 
     <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">
