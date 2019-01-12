@@ -1,0 +1,7 @@
+.button {
+    @apply .bg-white .rounded .shadow-md .px-5 .py-2 .text-grey-dark .text-sm .no-underline;
+
+    &--primary {
+        @apply .bg-purple .text-white;
+    }
+}

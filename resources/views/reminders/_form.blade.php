@@ -2,14 +2,16 @@
     @csrf
     
     <div class="row">
-        <div class="col lg:w-1/4">
+        <div class="col w-full">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="body">Remind me...</label>
                 <input type="text" name="body" id="body" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
             </div>
         </div>
+    </div>
 
-        <div class="col lg:w-1/4">
+    <div class="row">
+        <div class="col w-1/2">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="frequency">Frequency</label>
                 <select name="frequency" id="frequency" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
@@ -20,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col lg:w-1/4">
+        <div class="col w-1/2">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="day">Day</label>
                 <select name="day" id="day" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
@@ -31,8 +33,10 @@
                 </select>
             </div>
         </div>
+    </div>
 
-        <div class="col lg:w-1/4">
+    <div class="row">
+        <div class="col w-1/2">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="date">Date</label>
                 <select name="date" id="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
@@ -44,7 +48,7 @@
             </div>
         </div>
 
-        <div class="col lg:w-1/4">
+        <div class="col w-1/2">
             <div class="mb-4">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="time">Time</label>
                 @php

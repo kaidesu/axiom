@@ -23,5 +23,10 @@
         "tailwindcss": "^0.7.3",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.5.21"
+    },
+    "dependencies": {
+        "@efelle/proton": "^1.0.0-beta.2",
+        "moment": "^2.23.0",
+        "moment-range": "^4.0.1"
     }
 }

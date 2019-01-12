@@ -4,7 +4,7 @@
     <header class="flex justify-between items-end mb-3 px-6 py-4">
         <p class="text-grey text-base font-normal">My Projects</p>
 
-        <a href="/projects/create" class="button">New Project</a>
+        <a href="/projects/create" class="button button--primary">New Project</a>
     </header>
 
     <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">

@@ -46,6 +46,14 @@ let defaultConfig = require('tailwindcss/defaultConfig')()
 let colors = {
   'transparent': 'transparent',
 
+  'smoke-darkest': 'rgba(35, 42, 60, 0.9)',
+  'smoke-darker': 'rgba(35, 42, 60, 0.75)',
+  'smoke-dark': 'rgba(35, 42, 60, 0.6)',
+  'smoke': 'rgba(35, 42, 60, 0.5)',
+  'smoke-light': 'rgba(35, 42, 60, 0.4)',
+  'smoke-lighter': 'rgba(35, 42, 60, 0.25)',
+  'smoke-lightest': 'rgba(35, 42, 60, 0.1)',
+
   'black': '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',

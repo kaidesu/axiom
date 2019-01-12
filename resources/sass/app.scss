@@ -1,6 +1,3 @@
-// Variables
-@import 'variables';
-
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -39,29 +36,24 @@
  * @import "components/forms";
  */
 
- .button {
-     @apply .bg-purple .rounded .shadow-md .px-5 .py-2 .text-white .text-sm .no-underline;
- }
+.card {
+    @apply .bg-white .p-5 .rounded-lg .shadow;
+}
 
- .card {
-     @apply .bg-white .p-5 .rounded-lg .shadow;
- }
+.row {
+    @screen lg {
+        @apply .flex .flex-wrap .-mx-3;
+    }
+}
 
- .row {
-     @apply p-6;
-
-     @screen lg {
-         @apply .flex .flex-wrap .-mx-3;
-     }
- }
-
- .col {
-    @apply pb-6;
-
+.col {
     @screen lg {
         @apply .px-3;
     }
- }
+}
+
+@import "components/button";
+@import "components/modal";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
