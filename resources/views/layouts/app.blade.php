@@ -22,7 +22,7 @@
 <body class="bg-grey-light">
     <div id="app">
         <nav class="bg-white px-6 shadow">
-            <div class="container mx-auto">
+            <div class="container px-6 mx-auto">
                 <div class="lg:flex lg:justify-between lg:items-center py-2">
                     <h1 class="w-full flex justify-center lg:block lg:w-auto lg:mr-6">
                         <a href="{{ url('/home') }}">
