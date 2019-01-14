@@ -1,14 +1,8 @@
 <?php
 
-$users = App\User::count();
-
 $authSettings = [
-    'register' => true,
+    'register' => env('REGISTRATION_ENABLED', true),
 ];
-
-if ($users > 0) {
-    $authSettings['register'] = false;
-}
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +26,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/projects/create', 'ProjectController@create');
     Route::get('/projects/{project}', 'ProjectController@show');
     Route::post('/projects', 'ProjectController@store');
+
+    Route::post('/projects/{project}/tasks', 'ProjectTaskController@store');
 
     Route::get('/reminders', 'ReminderController@index')->name('reminders.index');
     Route::get('/reminders/create', 'ReminderController@create')->name('reminders.create');
