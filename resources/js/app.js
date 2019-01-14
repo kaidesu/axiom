@@ -21,6 +21,7 @@ window.Proton = require('@efelle/proton')
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('add-task', require('./components/AddTask.vue').default)
 Vue.component('create-project-modal', require('./components/CreateProjectModal.vue').default)
 Vue.component('create-reminder-modal', require('./components/CreateReminderModal.vue').default)
 

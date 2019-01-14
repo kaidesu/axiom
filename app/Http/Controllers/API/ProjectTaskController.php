@@ -8,15 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
-    public function store(Request $request)
+    public function store(Project $project)
     {
-        $attributes = $request->validate([
-            'title'       => 'required',
-            'description' => 'required',
+        request()->validate([
+            'body' => 'required'
         ]);
         
-        auth()->user()->projects()->create($attributes);
-        
+        $project->addTask(request('body'));
+
         return response(200);
     }
 }

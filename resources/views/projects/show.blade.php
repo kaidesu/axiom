@@ -13,10 +13,12 @@
         <div class="lg:w-3/4 lg:px-3 pb-6">
             <div class="mb-8">
                 <h2 class="font-normal text-grey text-lg mb-3">Tasks</h2>
-                {{-- Tasks --}}
+
                 @foreach($project->tasks as $task)
                     <div class="card mb-3">{{ $task->body }}</div>
                 @endforeach
+                
+                <add-task :project="{{ $project->toJson() }}"></add-task>
             </div>
 
             <div>

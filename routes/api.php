@@ -14,6 +14,7 @@
 Route::middleware('auth:api')->group(function() {
     Route::group(['prefix' => 'project'], function() {
         Route::post('/', 'API\ProjectController@store');
+        Route::post('/{project}/tasks', 'ProjectTaskController@store');
     });
 
     Route::group(['prefix' => 'reminder'], function() {
