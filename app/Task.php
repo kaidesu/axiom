@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Project;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
@@ -11,5 +12,15 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['body'];
+    protected $fillable = ['body', 'completed'];
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    public function path()
+    {
+        return $this->project->path().'/tasks/'.$this->id;
+    }
 }

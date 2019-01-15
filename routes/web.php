@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/projects', 'ProjectController@store');
 
     Route::post('/projects/{project}/tasks', 'ProjectTaskController@store');
+    Route::patch('/projects/{project}/tasks/{task}', 'ProjectTaskController@update');
 
     Route::get('/reminders', 'ReminderController@index')->name('reminders.index');
     Route::get('/reminders/create', 'ReminderController@create')->name('reminders.create');
