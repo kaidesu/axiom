@@ -1,23 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <header class="row">
+        <div class="col flex w-full justify-between items-end mt-5 mb-10">
+            <p class="text-grey text-base font-normal">Dashboard</p>
+    
+            <a href="#" disabled v-modal:create-reminder class="button">Customize</a>
+        </div>
+    </header>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+    <div class="row">
+        <div class="col w-full">
+            <div class="card text-center">Hello Universe.</div>
         </div>
     </div>
-</div>
+
 @endsection

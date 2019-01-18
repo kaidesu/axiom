@@ -30,7 +30,7 @@
                         </a>
                     </h1>
 
-                    <div class="mt-3 lg:mt-3 flex justify-between items-center">
+                    <div class="mt-3 lg:mt-0 flex justify-between items-center">
                         <ul class="list-reset flex mr-10">
                             @auth
                                 <li class="mr-4"><a class="text-sm text-grey no-underline" href="/projects">Projects</a></li>
@@ -72,7 +72,7 @@
             </div>
         </nav>
 
-        <main class="container mx-auto py-4">
+        <main class="container mx-auto p-6">
             @yield('content')
         </main>
     </div>

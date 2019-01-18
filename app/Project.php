@@ -11,7 +11,7 @@ class Project extends Model
      *
      * @var array
      */
-    protected $fillable = ['owner_id', 'title', 'description'];
+    protected $fillable = ['owner_id', 'title', 'description', 'notes'];
 
     public function path()
     {

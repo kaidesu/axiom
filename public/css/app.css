@@ -566,6 +566,15 @@ table {
  * @import "components/forms";
  */
 
+a {
+  color: rgba(0, 0, 0, .4);
+  text-decoration: none;
+}
+
+a :hover {
+  color: #606f7b;
+}
+
 .card {
   background-color: #fff;
   padding: 1.25rem;

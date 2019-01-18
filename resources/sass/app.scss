@@ -38,6 +38,14 @@
  * @import "components/forms";
  */
 
+a {
+    @apply .text-grey .no-underline;
+
+    :hover {
+        @apply .text-grey-darker;
+    }
+}
+
 .card {
     @apply .bg-white .p-5 .rounded-lg .shadow;
 }

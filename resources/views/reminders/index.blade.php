@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <header class="flex justify-between items-end mb-3 px-6 py-4">
-        <h2 class="text-grey text-base font-normal">My Reminders</h2>
-        
-        <a href="#" v-modal:create-reminder class="button button--primary">New Reminder</a>
+    <header class="row">
+        <div class="col flex w-full justify-between items-end mt-5 mb-10">
+            <p class="text-grey text-base font-normal">My Reminders</p>
+    
+            <a href="#" v-modal:create-reminder class="button button--primary">New Reminder</a>
     </header>
 
     <main class="lg:flex lg:flex-wrap lg:-mx-3 p-6">
