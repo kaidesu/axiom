@@ -12,6 +12,11 @@
 */
 
 Route::middleware('auth:api')->group(function() {
+    Route::group(['prefix' => 'notebook'], function() {
+        Route::post('/', 'API\NotebookController@store');
+        Route::post('/{notebook}/notes', 'API\NoteController@store');
+    });
+
     Route::group(['prefix' => 'project'], function() {
         Route::post('/', 'API\ProjectController@store');
         Route::post('/{project}/tasks', 'ProjectTaskController@store');

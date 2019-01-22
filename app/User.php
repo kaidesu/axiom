@@ -37,4 +37,13 @@ class User extends Authenticatable
         return $this->hasMany(Project::class, 'owner_id')
             ->latest('updated_at');
     }
+
+    /**
+     * A user can have many notebooks.
+     */
+    public function notebooks()
+    {
+        return $this->hasMany(Notebook::class, 'owner_id')
+            ->latest('updated_at');
+    }
 }

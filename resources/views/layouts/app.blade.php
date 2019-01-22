@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-grey-light">
+<body class="bg-grey-light h-full">
     <div id="app">
         <nav class="bg-white px-6 shadow">
             <div class="container px-6 mx-auto">
@@ -33,6 +33,7 @@
                     <div class="mt-3 lg:mt-0 flex justify-between items-center">
                         <ul class="list-reset flex mr-10">
                             @auth
+                                <li class="mr-4"><a class="text-sm text-grey no-underline" href="/notebooks">Notebooks</a></li>
                                 <li class="mr-4"><a class="text-sm text-grey no-underline" href="/projects">Projects</a></li>
                                 <li><a class="text-sm text-grey no-underline" href="/reminders">Reminders</a></li>
                             @endauth

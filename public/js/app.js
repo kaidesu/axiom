@@ -58556,6 +58556,40 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/AddNote.vue":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/AddNote.vue ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['notebook'],
+  methods: {
+    createNote() {
+      console.log('creating note...');
+      window.axios.post('/api/notebook/' + this.notebook.id + '/notes', {
+        'title': 'Hello World'
+      }).then(response => {
+        window.location.reload();
+      });
+    }
+
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/AddTask.vue":
 /*!*******************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/AddTask.vue ***!
@@ -58616,6 +58650,70 @@ __webpack_require__.r(__webpack_exports__);
     addTask() {
       window.axios.post('/api/project/' + this.project.id + '/tasks', {
         'body': this.body
+      }).then(response => {
+        window.location.reload();
+      });
+    }
+
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/CreateNotebookModal.vue":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/CreateNotebookModal.vue ***!
+  \*******************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'create-notebook-modal',
+
+  data() {
+    return {
+      title: '',
+      description: ''
+    };
+  },
+
+  methods: {
+    createNotebook() {
+      window.axios.post('/api/notebook', {
+        'title': this.title,
+        'description': this.description
       }).then(response => {
         window.location.reload();
       });
@@ -93849,6 +93947,49 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-08ad87d0\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/AddNote.vue":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-08ad87d0","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/AddNote.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "mb-2 pb-2 border-b-2 border-dashed text-sm" },
+    [
+      _c("div", { staticClass: "text-center" }, [
+        _c(
+          "a",
+          {
+            attrs: { href: "#" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.createNote($event)
+              }
+            }
+          },
+          [_vm._v("Add Note")]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["default"] = (esExports);
+if (false) {}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-23523024\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/CreateReminderModal.vue":
 /*!**********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-23523024","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/CreateReminderModal.vue ***!
@@ -94217,6 +94358,138 @@ var render = function() {
           {
             staticClass: "button button--primary",
             on: { click: _vm.createReminder }
+          },
+          [_vm._v("Create")]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["default"] = (esExports);
+if (false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-315e564a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/CreateNotebookModal.vue":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-315e564a","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/CreateNotebookModal.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "p-modal",
+    { attrs: { name: "create-notebook", title: "Create Notebook" } },
+    [
+      _c("form", { on: { submit: _vm.createNotebook } }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col w-full" }, [
+            _c("div", { staticClass: "mb-4" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                  attrs: { for: "title" }
+                },
+                [_vm._v("Title")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.title,
+                    expression: "title"
+                  }
+                ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                attrs: { type: "text", name: "title", id: "title" },
+                domProps: { value: _vm.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.title = $event.target.value
+                  }
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col w-full" }, [
+            _c("div", { staticClass: "mb-4" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                  attrs: { for: "description" }
+                },
+                [_vm._v("Description")]
+              ),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.description,
+                    expression: "description"
+                  }
+                ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                staticStyle: { "min-height": "150px" },
+                attrs: { type: "text", name: "description", id: "description" },
+                domProps: { value: _vm.description },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.description = $event.target.value
+                  }
+                }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { slot: "footer" }, slot: "footer" }, [
+        _c(
+          "button",
+          {
+            directives: [
+              {
+                name: "modal",
+                rawName: "v-modal:create-notebook",
+                arg: "create-notebook"
+              }
+            ],
+            staticClass: "button mr-3"
+          },
+          [_vm._v("Cancel")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "button button--primary",
+            on: { click: _vm.createNotebook }
           },
           [_vm._v("Create")]
         )
@@ -105659,6 +105932,8 @@ window.Proton = __webpack_require__(/*! @efelle/proton */ "./node_modules/@efell
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('add-task', __webpack_require__(/*! ./components/AddTask.vue */ "./resources/js/components/AddTask.vue").default);
+Vue.component('add-note', __webpack_require__(/*! ./components/AddNote.vue */ "./resources/js/components/AddNote.vue").default);
+Vue.component('create-notebook-modal', __webpack_require__(/*! ./components/CreateNotebookModal.vue */ "./resources/js/components/CreateNotebookModal.vue").default);
 Vue.component('create-project-modal', __webpack_require__(/*! ./components/CreateProjectModal.vue */ "./resources/js/components/CreateProjectModal.vue").default);
 Vue.component('create-reminder-modal', __webpack_require__(/*! ./components/CreateReminderModal.vue */ "./resources/js/components/CreateReminderModal.vue").default);
 /**
@@ -105718,6 +105993,50 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/js/components/AddNote.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/AddNote.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AddNote_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !babel-loader!../../../node_modules/vue-loader/lib/selector?type=script&index=0!./AddNote.vue */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/AddNote.vue");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_template_compiler_index_id_data_v_08ad87d0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AddNote_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-08ad87d0","hasScoped":false,"buble":{"transforms":{}}}!../../../node_modules/vue-loader/lib/selector?type=template&index=0!./AddNote.vue */ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-08ad87d0\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/AddNote.vue");
+var disposed = false
+var normalizeComponent = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/component-normalizer */ "./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  _babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AddNote_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+  _node_modules_vue_loader_lib_template_compiler_index_id_data_v_08ad87d0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AddNote_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/AddNote.vue"
+
+/* hot reload */
+if (false) {}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
 /***/ "./resources/js/components/AddTask.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/AddTask.vue ***!
@@ -105753,6 +106072,50 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/js/components/AddTask.vue"
+
+/* hot reload */
+if (false) {}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+
+/***/ "./resources/js/components/CreateNotebookModal.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/CreateNotebookModal.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateNotebookModal_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !babel-loader!../../../node_modules/vue-loader/lib/selector?type=script&index=0!./CreateNotebookModal.vue */ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/js/components/CreateNotebookModal.vue");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_template_compiler_index_id_data_v_315e564a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateNotebookModal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/template-compiler/index?{"id":"data-v-315e564a","hasScoped":false,"buble":{"transforms":{}}}!../../../node_modules/vue-loader/lib/selector?type=template&index=0!./CreateNotebookModal.vue */ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-315e564a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/components/CreateNotebookModal.vue");
+var disposed = false
+var normalizeComponent = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/component-normalizer */ "./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  _babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateNotebookModal_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+  _node_modules_vue_loader_lib_template_compiler_index_id_data_v_315e564a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateNotebookModal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/CreateNotebookModal.vue"
 
 /* hot reload */
 if (false) {}
